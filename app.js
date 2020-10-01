@@ -3,6 +3,7 @@ var express = require("express");
 var path = require("path");
 var cookieParser = require("cookie-parser");
 var logger = require("morgan");
+const cors = require("cors");
 // method override
 const methodOverride = require("method-override");
 // import express session untuk flash data maupun session login
@@ -37,7 +38,7 @@ const apiRouter = require("./routes/api");
 // const AdminController = require("./controllers/adminController");
 
 var app = express();
-
+app.use(cors());
 // view engine setup
 app.set("views", path.join(__dirname, "views"));
 app.set("view engine", "ejs");
