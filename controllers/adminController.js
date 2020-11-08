@@ -169,7 +169,7 @@ module.exports = {
         name,
         nameBank,
         nomorRekening,
-        imageUrl: `images/${req.file.filename}`,
+        imageUrl: `images/${req.file.filename}`
       });
       req.flash("alertMessage", "Success add data bank");
       req.flash("alertStatus", "success");
@@ -272,7 +272,7 @@ module.exports = {
         await category.save();
         for (let i = 0; i < req.files.length; i++) {
           const imageSave = await Image.create({
-            imageUrl: `images/${req.files[i].filename}`,
+            imageUrl: `images/${req.files[i].filename}`
           });
           item.imageId.push({ _id: imageSave._id });
           await item.save();
